@@ -5,16 +5,9 @@ namespace POCity {
     class MainClass {
         public static void Main (string[] args)
         {
-            Property wlasnosc = new Property ();
-            wlasnosc.X = 7;
-            wlasnosc.Y = 8;
-            //Wlasnosc.ToString();
-            Console.WriteLine (wlasnosc.ToString());
+            //Healthcare nowa = new Healthcare(1, 0);
 
-            Healthcare nowa = new Healthcare ();
-            nowa.X = 1;
-            nowa.Y = 0;
-            Console.WriteLine (nowa.ToString ());
+            //Console.WriteLine (nowa.ToString ());
 
 
             Property[,] mapa = new Property[20, 20];
@@ -23,10 +16,12 @@ namespace POCity {
             {
                 for (int j = 0; j < 20; j++) 
                 {
-                    mapa[i,j] = new Property();
+                    mapa[i, j] = null;
                 }
             }
 
+            mapa[10, 7] = new PlainRoad(10, 7);
+            Console.WriteLine (mapa[10, 7].ToString());
         }
     }
 }

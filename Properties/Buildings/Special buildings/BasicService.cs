@@ -3,8 +3,8 @@ namespace POCity.Properties
 {
     public class Power : BasicService
     {
-        //radius = 7;
-        public Power()
+        public Power(int x, int y)
+            : base(x, y)
         {
             radius = 7;
         }
@@ -16,10 +16,12 @@ namespace POCity.Properties
     }
     public class Water : BasicService
     {
-        public Water()
+        public Water(int x, int y)
+            : base(x, y)
         {
             radius = 5;
         }
+
         public override string ToString()
         {
             return "BW " + X.ToString() + " " + Y.ToString() + "\n";
