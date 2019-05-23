@@ -35,17 +35,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Property.cs" />
-    <Compile Include="Properties\Roads.cs" />
-    <Compile Include="Properties\Buildings.cs" />
     <Compile Include="Properties\SpecialBuilding.cs" />
-    <Compile Include="Properties\Buildings\ZoneBuildings.cs" />
-    <Compile Include="Properties\Buildings\Special buildings\BasicService.cs" />
-    <Compile Include="Properties\Buildings\Special buildings\OtherService.cs" />
-    <Compile Include="Properties\Buildings\Special buildings\PublicService.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\BasicService.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\OtherService.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService.cs" />
+    <Compile Include="Properties\Property\Buildings\ZoneBuildings.cs" />
+    <Compile Include="Properties\Property\Roads.cs" />
+    <Compile Include="Properties\Property\Buildings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\Buildings\" />
-    <Folder Include="Properties\Buildings\Special buildings\" />
+    <Folder Include="Properties\Property\" />
+    <Folder Include="Properties\Property\Buildings\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
