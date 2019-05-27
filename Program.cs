@@ -9,19 +9,13 @@ namespace POCity {
 
             //Console.WriteLine (nowa.ToString ());
 
+            Map plansza = new Map();
 
-            Property[,] mapa = new Property[20, 20];
 
-            for (int i = 0; i < 20; i++) 
-            {
-                for (int j = 0; j < 20; j++) 
-                {
-                    mapa[i, j] = null;
-                }
-            }
 
-            mapa[10, 7] = new PlainRoad(10, 7);
-            Console.WriteLine (mapa[10, 7].ToString());
+
+            //mapa[10, 7] = new PlainRoad(10, 7);
+            //Console.WriteLine (mapa[10, 7].ToString());
         }
     }
 }

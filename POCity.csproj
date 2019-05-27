@@ -42,6 +42,7 @@
     <Compile Include="Properties\Property\Buildings\ZoneBuildings.cs" />
     <Compile Include="Properties\Property\Roads.cs" />
     <Compile Include="Properties\Property\Buildings.cs" />
+    <Compile Include="Properties\map.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\Property\" />

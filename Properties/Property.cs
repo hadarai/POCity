@@ -20,7 +20,6 @@ namespace POCity.Properties
             return "Jestem dzialka " + X.ToString() + " " + Y.ToString();
         }
     }
-
     /*
     public class Blank_Space : Property
     {
@@ -31,7 +30,6 @@ namespace POCity.Properties
         }
     }
     */
-
     public class Building : Property
     {
         public bool czy_ma_wode;
