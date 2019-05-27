@@ -38,14 +38,12 @@ namespace POCity.Properties
         public Building(int x, int y)
             : base(x, y)
         {
-
-            //base(x, y);
             czy_ma_wode = false; //= policz_czy_ma_wode(X, Y);
             czy_ma_prad = false; //= policz_czy_ma_prad(X, Y);
         }
         public override string ToString()
         {
-            return "Jestem budynkiem " + X.ToString() + " " + Y.ToString() + "\n";
+            return "Jestem budynkiem " + X.ToString() + " " + Y.ToString();
         }
     }
 
@@ -58,7 +56,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "Jestem droga " + X.ToString() + " " + Y.ToString() + "\n";
+            return "Jestem droga " + X.ToString() + " " + Y.ToString();
         }
     }
 }

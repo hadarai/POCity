@@ -11,11 +11,10 @@ namespace POCity {
 
             Map plansza = new Map();
 
+            plansza.postaw_droge (1, 2, 0); //0-plain, 1-alley, 2-highway
+            //plansza.zawolaj_to_string(1, 2);
 
-
-
-            //mapa[10, 7] = new PlainRoad(10, 7);
-            //Console.WriteLine (mapa[10, 7].ToString());
+            plansza.wypisz_mape();
         }
     }
 }

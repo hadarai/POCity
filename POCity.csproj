@@ -42,7 +42,9 @@
     <Compile Include="Properties\Property\Buildings\ZoneBuildings.cs" />
     <Compile Include="Properties\Property\Roads.cs" />
     <Compile Include="Properties\Property\Buildings.cs" />
-    <Compile Include="Properties\map.cs" />
+    <Compile Include="Properties\map_main.cs" />
+    <Compile Include="Properties\map_additional.cs" />
+    <Compile Include="Properties\map_creator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\Property\" />

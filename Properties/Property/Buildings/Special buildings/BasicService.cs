@@ -11,7 +11,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "BP " + X.ToString() + " " + Y.ToString() + "\n";
+            return "BP " + X.ToString() + " " + Y.ToString();
         }
     }
     public class Water : BasicService
@@ -24,7 +24,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "BW " + X.ToString() + " " + Y.ToString() + "\n";
+            return "BW " + X.ToString() + " " + Y.ToString();
         }
     }
 }

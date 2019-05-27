@@ -8,7 +8,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "PH " + X.ToString() + " " + Y.ToString() + "\n";
+            return "PH " + X.ToString() + " " + Y.ToString();
         }
     }
     public class Police : PublicService
@@ -18,7 +18,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "PP " + X.ToString() + " " + Y.ToString() + "\n";
+            return "PP " + X.ToString() + " " + Y.ToString();
         }
     }
     public class Fire : PublicService
@@ -28,7 +28,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "PF " + X.ToString() + " " + Y.ToString() + "\n";
+            return "PF " + X.ToString() + " " + Y.ToString();
         }
     }
 }
