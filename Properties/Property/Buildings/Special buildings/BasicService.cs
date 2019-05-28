@@ -1,17 +1,19 @@
 ﻿using System;
 namespace POCity.Properties
 {
-    public class Power : BasicService
+    public class PowerPlant : BasicService
     {
-        public Power(int x, int y)
+        public PowerPlant(int x, int y, double odl_do_wody)
             : base(x, y)
         {
             radius = 7;
+            czy_ma_prad = true;
+            czy_ma_wode = (odl_do_wody <= 7);
         }
 
         public override string ToString()
         {
-            return "BP " + X.ToString() + " " + Y.ToString();
+            return "BP " + x.ToString() + " " + y.ToString();
         }
     }
     public class Water : BasicService
@@ -24,7 +26,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "BW " + X.ToString() + " " + Y.ToString();
+            return "BW " + x.ToString() + " " + y.ToString();
         }
     }
 }

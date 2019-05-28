@@ -9,7 +9,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "RP " + X.ToString() + " " + Y.ToString();
+            return "RP " + x.ToString() + " " + y.ToString();
         }
     }
     public class Alley : Road
@@ -19,7 +19,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "RA " + X.ToString() + " " + Y.ToString();
+            return "RA " + x.ToString() + " " + y.ToString();
         }
     }
     public class Highway : Road
@@ -29,7 +29,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "RH " + X.ToString() + " " + Y.ToString();
+            return "RH " + x.ToString() + " " + y.ToString();
         }
     }
 }

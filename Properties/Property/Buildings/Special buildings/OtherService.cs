@@ -8,7 +8,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "OS " + X.ToString() + " " + Y.ToString();
+            return "OS " + x.ToString() + " " + y.ToString();
         }
     }
 
@@ -20,7 +20,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "OP " + X.ToString() + " " + Y.ToString();
+            return "OP " + x.ToString() + " " + y.ToString();
         }
     }
 }

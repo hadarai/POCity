@@ -8,7 +8,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "ZR " + X.ToString() + " " + Y.ToString();
+            return "ZR " + x.ToString() + " " + y.ToString();
         }
     }
     public class Commercial : ZoneBuilding
@@ -18,7 +18,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "ZC " + X.ToString() + " " + Y.ToString();
+            return "ZC " + x.ToString() + " " + y.ToString();
         }
     }
     public class IndustrialBuilding : ZoneBuilding
@@ -28,7 +28,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "ZI " + X.ToString() + " " + Y.ToString();
+            return "ZI " + x.ToString() + " " + y.ToString();
         }
     }
 }

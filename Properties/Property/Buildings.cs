@@ -8,7 +8,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "Jestem zone building " + X.ToString() + " " + Y.ToString();
+            return "Jestem zone building " + x.ToString() + " " + y.ToString();
         }
     }
     public class SpecialBuilding : Building
@@ -20,7 +20,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "Jestem specjalnym budynkiem " + X.ToString() + " " + Y.ToString();
+            return "Jestem specjalnym budynkiem " + x.ToString() + " " + y.ToString();
         }
     }
 }

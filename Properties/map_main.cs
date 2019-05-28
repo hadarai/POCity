@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace POCity.Properties
 {
     public partial class Map
     {
         Property[,] mapa = new Property[20, 20];
+
+        private List<PowerPlant> elektrownie = new List<PowerPlant>();
+        private List<Water> wierze_cisnien = new List<Water>();
 
         public Map()
         {

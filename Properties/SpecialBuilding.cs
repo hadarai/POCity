@@ -8,7 +8,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "Jestem basic special " + X.ToString() + " " + Y.ToString() + "\n";
+            return "Jestem basic special " + x.ToString() + " " + y.ToString() + "\n";
         }
     }
 
@@ -19,7 +19,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "Jestem publicService special " + X.ToString() + " " + Y.ToString() + "\n";
+            return "Jestem publicService special " + x.ToString() + " " + y.ToString() + "\n";
         }
     }
 
@@ -30,7 +30,7 @@ namespace POCity.Properties
         { }
         public override string ToString()
         {
-            return "Jestem other special " + X.ToString() + " " + Y.ToString() + "\n";
+            return "Jestem other special " + x.ToString() + " " + y.ToString() + "\n";
         }
     }
 }

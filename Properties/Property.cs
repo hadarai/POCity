@@ -6,18 +6,18 @@ namespace POCity.Properties
 
     public abstract class Property
     {
-        public int X;
-        public int Y;
+        public int x;
+        public int y;
 
-        public Property(int x, int y)
+        public Property(int nx, int ny)
         {
-            X = x;
-            Y = y;
+            x = nx;
+            y = ny;
         }
 
         public override string ToString()
         {
-            return "Jestem dzialka " + X.ToString() + " " + Y.ToString();
+            return "Jestem dzialka " + x.ToString() + " " + y.ToString();
         }
     }
     /*
@@ -43,7 +43,7 @@ namespace POCity.Properties
         }
         public override string ToString()
         {
-            return "Jestem budynkiem " + X.ToString() + " " + Y.ToString();
+            return "Jestem budynkiem " + x.ToString() + " " + y.ToString();
         }
     }
 
@@ -56,7 +56,7 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "Jestem droga " + X.ToString() + " " + Y.ToString();
+            return "Jestem droga " + x.ToString() + " " + y.ToString();
         }
     }
 }
