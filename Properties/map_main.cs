@@ -8,7 +8,7 @@ namespace POCity.Properties
         Property[,] mapa = new Property[20, 20];
 
         private List<PowerPlant> elektrownie = new List<PowerPlant>();
-        private List<Water> wierze_cisnien = new List<Water>();
+        public List<Water> wierze_cisnien = new List<Water>();
 
         public Map()
         {

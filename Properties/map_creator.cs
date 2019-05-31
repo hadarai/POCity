@@ -24,7 +24,7 @@ namespace POCity.Properties
 
         public void postaw_elektrownie(int x, int y)
         {
-            if(czy_moge_tu_cokolwiek(x, y) && czy_obok_jest_droga(x,y))
+            if(czy_moge_tu_cokolwiek(x, y) && czy_obok_jest_droga(x,y))// || true)
             {
                 PowerPlant temp = new PowerPlant(x, y, policz_najmniejsza_odl(wierze_cisnien, x, y));
 

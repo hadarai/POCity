@@ -13,8 +13,12 @@ namespace POCity {
 
             plansza.postaw_droge (1, 2, 0); //0-plain, 1-alley, 2-highway
             //plansza.zawolaj_to_string(1, 2);
-
-            plansza.wypisz_mape();
+            Water wierza1 = new Water(7, 11);
+            Water wierza2 = new Water(9, 2);
+            plansza.wierze_cisnien.Add(wierza1);
+            plansza.wierze_cisnien.Add(wierza2);
+            plansza.postaw_elektrownie(1, 1);
+            //plansza.wypisz_mape();
         }
     }
 }
