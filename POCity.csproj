@@ -44,7 +44,9 @@
     <Compile Include="Properties\Property\Buildings.cs" />
     <Compile Include="Properties\map_main.cs" />
     <Compile Include="Properties\map_additional.cs" />
-    <Compile Include="Properties\map_creator.cs" />
+    <Compile Include="Properties\map_road_creator.cs" />
+    <Compile Include="Properties\map_special_creator.cs" />
+    <Compile Include="Properties\map_zone_creator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\Property\" />

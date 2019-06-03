@@ -6,8 +6,8 @@ namespace POCity.Properties
         public PowerPlant(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
             : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
         {
-            czy_ma_prad = true;
-            czy_ma_wode = MapaMowiOWodzie;
+            CzyMamPrad = true;
+            CzyMamWode = MapaMowiOWodzie;
         }
         
         public override string ToString()
@@ -20,8 +20,8 @@ namespace POCity.Properties
         public Water(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
             : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
         {
-            czy_ma_prad = MapaMowiOPradzie;
-            czy_ma_wode = true;
+            CzyMamPrad = MapaMowiOPradzie;
+            CzyMamWode = true;
         }
 
         public override string ToString()

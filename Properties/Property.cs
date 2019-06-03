@@ -32,8 +32,8 @@ namespace POCity.Properties
     */
     public class Building : Property
     {
-        protected bool czy_ma_wode { get; set; }
-        protected bool czy_ma_prad { get; set; }
+        protected bool CzyMamWode { get; set; }
+        protected bool CzyMamPrad { get; set; }
 
         virtual public bool CzyWystarczajacoBlisko(double distance)
         { 
@@ -44,8 +44,8 @@ namespace POCity.Properties
         public Building (int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
             : base(x, y)
         {
-            czy_ma_wode = false;  //= policz_czy_ma_wode(X, Y);
-            czy_ma_prad = false; //= policz_czy_ma_prad(X, Y);
+            CzyMamWode = false;  //= policz_czy_ma_wode(X, Y);
+            CzyMamPrad = false; //= policz_czy_ma_prad(X, Y);
         }
         public override string ToString()
         {

@@ -15,11 +15,9 @@ namespace POCity {
             //Water wierza1 = new Water(7, 11);
             //Water wierza2 = new Water(9, 2);
 
-            //plansza.wierze_cisnien.Add(wierza1);
-            //plansza.wierze_cisnien.Add(wierza2);
-            plansza.PostawElektrownie(1, 1);
-            plansza.WypiszMape();
-            //plansza.wypisz_mape();
+            plansza.PostawDom(1, 1);
+            plansza.WypiszMape(); 
+
         }
     }
 }
