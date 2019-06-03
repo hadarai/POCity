@@ -5,15 +5,11 @@ namespace POCity {
     class MainClass {
         public static void Main (string[] args)
         {
-            //Healthcare nowa = new Healthcare(1, 0);
-
-            //Console.WriteLine (nowa.ToString ());
-
             Map plansza = new Map();
-            plansza.wypisz_mape();
+            plansza.WypiszMape();
 
-            plansza.PostawDroge (1, 2, 0); //0-plain, 1-alley, 2-highway
-            plansza.wypisz_mape();
+            plansza.PostawDroge (1, 2, 2); //0-plain, 1-alley, 2-highway
+            plansza.WypiszMape();
 
             //plansza.zawolaj_to_string(1, 2);
             //Water wierza1 = new Water(7, 11);
@@ -21,8 +17,8 @@ namespace POCity {
 
             //plansza.wierze_cisnien.Add(wierza1);
             //plansza.wierze_cisnien.Add(wierza2);
-            plansza.PostawElektrownie(0, 1);
-            plansza.wypisz_mape();
+            plansza.PostawElektrownie(1, 1);
+            plansza.WypiszMape();
             //plansza.wypisz_mape();
         }
     }

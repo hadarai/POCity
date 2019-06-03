@@ -49,11 +49,12 @@ namespace POCity.Properties
             }
         }
 
-        public void zawolaj_to_string(int x, int y)
+        public void ZawolajToString(int x, int y)
         {
             if (mapa[x, y] == null)
             {
-                Console.Write("BL");
+                //Console.Write("BL");
+                Console.Write("  ");
             }
             else
             {
@@ -61,13 +62,13 @@ namespace POCity.Properties
             }
         }
 
-        public void wypisz_mape()
+        public void WypiszMape()
         {
             for(int i=0;i<20;i++)
             {
                 for(int j=0;j<20;j++)
                 {
-                    zawolaj_to_string(i, j);
+                    ZawolajToString(i, j);
                 }
                 Console.Write("\n");
             }

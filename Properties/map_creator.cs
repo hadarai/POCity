@@ -7,17 +7,20 @@ namespace POCity.Properties
         {
             if (CzyMogeTuCokolwiek(x, y))
             {
-                if (Typ == 0)
+                switch (Typ
+)
                 {
-                    mapa[x, y] = new PlainRoad(x, y);
-                }
-                else if (Typ == 1)
-                {
-                    mapa[x, y] = new Alley(x, y);
-                }
-                else
-                {
-                    mapa[x, y] = new Highway(x, y);
+                    case 0:
+                        mapa[x, y] = new PlainRoad(x, y);
+                        break;
+                    case 1:
+                        mapa[x, y] = new Alley(x, y);
+                        break;
+                    case 2:
+                        mapa[x, y] = new Highway(x, y);
+                        break;
+                    default:
+                        break;
                 }
             }
         }
