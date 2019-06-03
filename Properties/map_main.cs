@@ -25,7 +25,7 @@ namespace POCity.Properties
         {
             if (mapa[x, y] == null)
             {
-                Console.Write("BL ");
+                Console.Write("BL");
             }
             else
             {

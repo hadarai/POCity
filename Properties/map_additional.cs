@@ -20,21 +20,14 @@ namespace POCity.Properties
         private double policz_najmniejsza_odl<T>(List<T> someList, int x, int y)
         {
             double min = 500;
-            if (typeof(T) == typeof(Water))
+            System.Collections.IList list = someList;
+            for (int i1 = 0; i1 < list.Count; i1++)
             {
-
-                System.Collections.IList list = someList;
-                for (int i1 = 0; i1 < list.Count; i1++)
-                {
-                    Property i = (Property)list[i1];
-                    double dist = Math.Sqrt((Math.Abs(i.x - x)) ^ 2 + (Math.Abs(y - i.y) ^ 2));
-                    //Console.WriteLine("kuupa" + i.y + i.x);
-                    if (dist < min) min = dist;
-                    //Console.WriteLine(dist);
-                }
-
-                // etc
+                Property i = (Property)list[i1];
+                double dist = Math.Sqrt((Math.Abs(i.x - x)) ^ 2 + (Math.Abs(y - i.y) ^ 2));
+                if (dist < min) min = dist;
             }
+
             //Console.WriteLine(min);
             return min;
         }
