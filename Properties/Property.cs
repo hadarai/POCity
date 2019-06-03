@@ -32,13 +32,19 @@ namespace POCity.Properties
     */
     public class Building : Property
     {
-        public bool czy_ma_wode;
-        public bool czy_ma_prad;
+        protected bool czy_ma_wode { get; set; }
+        protected bool czy_ma_prad { get; set; }
 
-        public Building(int x, int y)
+        virtual public bool CzyWystarczajacoBlisko(double distance)
+        { 
+            return true; 
+            }
+
+        //public Building(int x, int y)
+        public Building (int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
             : base(x, y)
         {
-            czy_ma_wode = false; //= policz_czy_ma_wode(X, Y);
+            czy_ma_wode = false;  //= policz_czy_ma_wode(X, Y);
             czy_ma_prad = false; //= policz_czy_ma_prad(X, Y);
         }
         public override string ToString()

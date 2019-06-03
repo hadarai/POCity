@@ -10,8 +10,10 @@ namespace POCity {
             //Console.WriteLine (nowa.ToString ());
 
             Map plansza = new Map();
+            plansza.wypisz_mape();
 
-            plansza.postaw_droge (1, 2, 0); //0-plain, 1-alley, 2-highway
+            plansza.PostawDroge (1, 2, 0); //0-plain, 1-alley, 2-highway
+            plansza.wypisz_mape();
 
             //plansza.zawolaj_to_string(1, 2);
             //Water wierza1 = new Water(7, 11);
@@ -19,7 +21,8 @@ namespace POCity {
 
             //plansza.wierze_cisnien.Add(wierza1);
             //plansza.wierze_cisnien.Add(wierza2);
-            plansza.postaw_elektrownie(1, 1);
+            plansza.PostawElektrownie(0, 1);
+            plansza.wypisz_mape();
             //plansza.wypisz_mape();
         }
     }

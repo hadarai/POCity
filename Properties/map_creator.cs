@@ -3,15 +3,15 @@ namespace POCity.Properties
 {
     public partial class Map
     {
-        public void postaw_droge(int x, int y, int typ)
+        public void PostawDroge(int x, int y, int Typ)
         {
-            if (czy_moge_tu_cokolwiek(x, y) && czy_obok_jest_droga(x, y))
+            if (CzyMogeTuCokolwiek(x, y))
             {
-                if (typ == 0)
+                if (Typ == 0)
                 {
                     mapa[x, y] = new PlainRoad(x, y);
                 }
-                else if (typ == 1)
+                else if (Typ == 1)
                 {
                     mapa[x, y] = new Alley(x, y);
                 }
@@ -22,14 +22,80 @@ namespace POCity.Properties
             }
         }
 
-        public void postaw_elektrownie(int x, int y)
+        public void PostawElektrownie(int x, int y)
         {
-            if(czy_moge_tu_cokolwiek(x, y) && czy_obok_jest_droga(x,y))// || true)
+            if(CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x,y))
             {
-                PowerPlant temp = new PowerPlant(x, y, policz_najmniejsza_odl(wierze_cisnien, x, y));
+                PowerPlant temp = new PowerPlant(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, true);
 
                 mapa[x, y] = temp;
-                elektrownie.Add(temp);
+                Elektrownie.Add(temp);
+            }
+        }
+
+        public void PostawWierzeCisnien(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Water temp = new Water(x, y, true, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                WierzeCisnien.Add(temp);
+            }
+        }
+
+        public void PostawPolicje(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Police temp = new Police(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                Policje.Add(temp);
+            }
+        }
+
+        public void PostawStraz(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Fire temp = new Fire(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                StrazePozarne.Add(temp);
+            }
+        }
+
+        public void PostawSzpital(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Healthcare temp = new Healthcare(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                Szpitale.Add(temp);
+            }
+        }
+
+        public void PostawPark(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Park temp = new Park(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                Parki.Add(temp);
+            }
+        }
+
+        public void PostawSzkole(int x, int y)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                School temp = new School(x, y, NajkrotszaOdleglosc(WierzeCisnien, x, y) < PromienWody, NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu);
+
+                mapa[x, y] = temp;
+                Szkoly.Add(temp);
             }
         }
     }

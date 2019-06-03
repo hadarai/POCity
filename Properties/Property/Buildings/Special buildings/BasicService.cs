@@ -3,30 +3,30 @@ namespace POCity.Properties
 {
     public class PowerPlant : BasicService
     {
-        public PowerPlant(int x, int y, double odl_do_wody)
-            : base(x, y)
+        public PowerPlant(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
+            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
         {
-            radius = 7;
             czy_ma_prad = true;
-            czy_ma_wode = (odl_do_wody <= 7);
+            czy_ma_wode = MapaMowiOWodzie;
         }
-
+        
         public override string ToString()
         {
-            return "BP " + x.ToString() + " " + y.ToString();
+            return "BP";// + x.ToString() + " " + y.ToString();
         }
     }
     public class Water : BasicService
     {
-        public Water(int x, int y)
-            : base(x, y)
+        public Water(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
+            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
         {
-            radius = 5;
+            czy_ma_prad = MapaMowiOPradzie;
+            czy_ma_wode = true;
         }
 
         public override string ToString()
         {
-            return "BW " + x.ToString() + " " + y.ToString();
+            return "BW";// + x.ToString() + " " + y.ToString();
         }
     }
 }

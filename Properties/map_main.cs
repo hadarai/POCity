@@ -7,11 +7,39 @@ namespace POCity.Properties
     {
         Property[,] mapa = new Property[20, 20];
 
-        private List<PowerPlant> elektrownie = new List<PowerPlant>();
-        public List<Water> wierze_cisnien = new List<Water>();
+        private int PromienPradu;
+        private int PromienWody;
+
+        private int PromienPolicji;
+        private int PromienStrazy;
+        private int PromienSzpitala;
+
+        private int PromienParku;
+        private int PromienSzkoly;
+
+        private List<PowerPlant> Elektrownie = new List<PowerPlant>();
+        public List<Water> WierzeCisnien = new List<Water>();
+
+        public List<Police> Policje = new List<Police>();
+        public List<Fire> StrazePozarne = new List<Fire>();
+        public List<Healthcare> Szpitale = new List<Healthcare>();
+
+        public List<Park> Parki = new List<Park>();
+        public List<School> Szkoly = new List<School>();
+
 
         public Map()
         {
+            PromienPradu = 7;
+            PromienWody = 5;
+
+            PromienPolicji = 10;
+            PromienStrazy = 10;
+            PromienSzpitala = 10;
+
+            PromienParku = 4;
+            PromienSzkoly = 6;
+
             for (int i = 0; i < 20; i++)
             {
                 for (int j = 0; j < 20; j++)
@@ -43,6 +71,7 @@ namespace POCity.Properties
                 }
                 Console.Write("\n");
             }
+            Console.Write("\n");
         }
 
     }
