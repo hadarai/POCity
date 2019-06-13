@@ -6,30 +6,37 @@ namespace POCity.Properties
     {
         public PlainRoad(int x, int y)
             : base(x, y)
-        { }
-        public override string ToString()
+        { 
+            nazwa = "RP";
+            }
+        public static int GetRadius()
         {
-            return "RP"; // + x.ToString() + " " + y.ToString();
+            return 0;
         }
     }
-    public class Alley : Road
+    public class Avenue : Road
     {
-        public Alley(int x, int y)
+        public Avenue(int x, int y)
             : base(x, y)
-        { }
-        public override string ToString()
         {
-            return "RA"; // + x.ToString() + " " + y.ToString();
+            nazwa = "RA"; 
+            }
+        public static int GetRadius()
+        {
+            return 0;
         }
     }
+
     public class Highway : Road
     {
         public Highway(int x, int y)
             : base(x, y)
-        { }
-        public override string ToString()
         {
-            return "RH"; // + x.ToString() + " " + y.ToString();
+            nazwa = "RH"; 
+            }
+        public static int GetRadius()
+        {
+            return 0;
         }
     }
 }

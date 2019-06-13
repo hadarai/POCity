@@ -8,8 +8,10 @@ namespace POCity.Properties
     {
         public int x;
         public int y;
+        protected string nazwa;
+        protected int PromienPradu = 7;
 
-        public Property(int nx, int ny)
+        protected Property(int nx, int ny)
         {
             x = nx;
             y = ny;
@@ -17,40 +19,46 @@ namespace POCity.Properties
 
         public override string ToString()
         {
-            return "Jestem dzialka " + x.ToString() + " " + y.ToString();
+            return this.nazwa; //+ " " + x.ToString() + " " + y.ToString();
         }
-    }
-    /*
-    public class Blank_Space : Property
-    {
 
-        public override string ToString()
+        public static int GetRadius()
         {
-            return "BL " + X.ToString() + " " + Y.ToString() + "\n";
+            return 0;
         }
     }
-    */
+
     public class Building : Property
     {
         protected bool CzyMamWode { get; set; }
         protected bool CzyMamPrad { get; set; }
 
-        virtual public bool CzyWystarczajacoBlisko(double distance)
-        { 
-            return true; 
-            }
+        public List<Type> wymagane_budynki = new List<Type>();
 
-        //public Building(int x, int y)
-        public Building (int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
+        protected Building(int x, int y)
             : base(x, y)
         {
-            CzyMamWode = false;  //= policz_czy_ma_wode(X, Y);
-            CzyMamPrad = false; //= policz_czy_ma_prad(X, Y);
+           
+            wymagane_budynki.Add(typeof(PowerPlant));
+            wymagane_budynki.Add(typeof(Water));
         }
-        public override string ToString()
+
+        public void GetToKnow(Type NewNeighbour) //= Update
         {
-            return "Jestem budynkiem " + x.ToString() + " " + y.ToString();
+            if (NewNeighbour == typeof(PowerPlant))
+            {
+                CzyMamPrad = true;
+                //return Elektrownie;
+            }
+            else if (NewNeighbour == typeof(Water))
+            {
+                CzyMamWode = true;
+                //return WiezeCisnien;
+            }
+
         }
+
+
     }
 
     public class Road : Property
@@ -60,9 +68,9 @@ namespace POCity.Properties
             : base(x,y)
         { }
 
-        public override string ToString()
+        new public static int GetRadius()
         {
-            return "Jestem droga " + x.ToString() + " " + y.ToString();
+            return 0;
         }
     }
 }

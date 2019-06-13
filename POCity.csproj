@@ -35,22 +35,32 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Property.cs" />
-    <Compile Include="Properties\SpecialBuilding.cs" />
-    <Compile Include="Properties\Property\Buildings\Special buildings\BasicService.cs" />
-    <Compile Include="Properties\Property\Buildings\Special buildings\OtherService.cs" />
-    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService.cs" />
     <Compile Include="Properties\Property\Buildings\ZoneBuildings.cs" />
     <Compile Include="Properties\Property\Roads.cs" />
     <Compile Include="Properties\Property\Buildings.cs" />
-    <Compile Include="Properties\map_main.cs" />
-    <Compile Include="Properties\map_additional.cs" />
-    <Compile Include="Properties\map_road_creator.cs" />
-    <Compile Include="Properties\map_special_creator.cs" />
-    <Compile Include="Properties\map_zone_creator.cs" />
+    <Compile Include="Properties\Map\map_additional.cs" />
+    <Compile Include="Properties\Map\map_main.cs" />
+    <Compile Include="Properties\Map\map_road_creator.cs" />
+    <Compile Include="Properties\Map\map_special_creator.cs" />
+    <Compile Include="Properties\Map\map_zone_creator.cs" />
+    <Compile Include="Properties\TextInterface.cs" />
+    <Compile Include="Exceptions\UnableToBuild.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\BasicService\PowerPlant.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\BasicService\WaterTower.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\OtherService\School.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\OtherService\Park.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\Healthcare.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\PoliceStation.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\FireDept.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\Property\" />
     <Folder Include="Properties\Property\Buildings\" />
+    <Folder Include="Properties\Map\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Properties\Property\Buildings\Special buildings\BasicService\" />
+    <Folder Include="Properties\Property\Buildings\Special buildings\OtherService\" />
+    <Folder Include="Properties\Property\Buildings\Special buildings\PublicService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

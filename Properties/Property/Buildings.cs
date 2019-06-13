@@ -7,27 +7,52 @@ namespace POCity.Properties
         protected bool CzyMamStraz { get; set; }
         protected bool CzyMamSzpital { get; set; }
 
-        public ZoneBuilding(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie, bool MapaMowiOPolicji, bool MapaMowiOStrazy, bool MapaMowiOSzpitalu)
-            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
-        {
-            CzyMamPolicje = MapaMowiOPolicji;
-            CzyMamStraz = MapaMowiOStrazy;
-            CzyMamSzpital = MapaMowiOSzpitalu;
-            }
+        public ZoneBuilding(int x, int y)
+            : base(x, y) 
+            { }
 
-        public override string ToString()
+
+        new public void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
         {
-            return "Jestem ZoneBuilding " + x.ToString() + " " + y.ToString();
+            base.GetToKnow(NewNeighbour);
+
+            if (NewNeighbour == typeof(Healthcare))
+            {
+                CzyMamSzpital = true;
+                //return Szpitale;
+            }
+            if (NewNeighbour == typeof(PoliceStation))
+            {
+                CzyMamPolicje = true;
+                //return Policje;
+            }
+            if (NewNeighbour == typeof(FireDept))
+            {
+                CzyMamStraz = true;
+                //return StrazePozarn1e;
+            }
+        }
+
+        public virtual bool Czy_jestem_szczesliwy()
+        { 
+            return false; 
+            }
+        public static int GetRadius()
+        {
+            return 0;
         }
     }
+
     public class SpecialBuilding : Building
     {
-        public SpecialBuilding(int x, int y, bool MapaMowiOWodzie, bool MapaMowiOPradzie)
-            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie)
-        { }
-        public override string ToString()
+        public SpecialBuilding(int x, int y)
+            : base(x, y)
+            { }
+
+        public static int GetRadius()
         {
-            return "Jestem SpecjalnymBudynkiem " + x.ToString() + " " + y.ToString();
+            return 0;
         }
+
     }
 }

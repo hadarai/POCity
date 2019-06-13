@@ -3,83 +3,94 @@ namespace POCity.Properties
 {
     public class ResidentialBuilding : ZoneBuilding
     {
-        bool CzyMamPark;
-        bool CzyMamSzkole;
+        bool CzyMamPark { get; set; }
+        bool CzyMamSzkole { get; set; }
+
         public ResidentialBuilding(int x,
-                                   int y,
-                                   bool MapaMowiOWodzie,
-                                   bool MapaMowiOPradzie,
-                                   bool MapaMowiOPolicji,
-                                   bool MapaMowiOStrazy,
-                                   bool MapaMowiOSzpitalu,
-                                   bool MapaMowiOParku,
-                                   bool MapaMowiOSzkole)
-            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie, MapaMowiOPolicji, MapaMowiOStrazy, MapaMowiOSzpitalu)
+                                   int y)
+            : base(x, y)
         {
-            CzyMamPrad = MapaMowiOPradzie;
-            CzyMamWode = MapaMowiOWodzie;
+            nazwa = "ZR";
+        }
 
-            CzyMamPolicje = MapaMowiOPolicji;
-            CzyMamStraz = MapaMowiOStrazy;
-            CzyMamSzpital = MapaMowiOSzpitalu;
+        public void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
+        {
+            base.GetToKnow(NewNeighbour);
 
-            CzyMamPark = MapaMowiOParku;
-            CzyMamSzkole = MapaMowiOSzkole;
+            if (NewNeighbour == typeof(Park))
+            {
+                CzyMamPark = true;
+                //return Elektrownie;
             }
-        public override string ToString()
+            if (NewNeighbour == typeof(School))
+            {
+                CzyMamSzkole = true;
+                //return Elektrownie;
+            }
+        }
+
+        new public bool Czy_jestem_szczesliwy()
         {
-            return "ZR";// + x.ToString() + " " + y.ToString();
+            return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital && CzyMamPark && CzyMamSzkole);
+        }
+
+        public static int GetRadius()
+        {
+            return 0;
         }
     }
+
     public class CommercialBuilding : ZoneBuilding
     {
-        bool CzyMamPark;
-        public CommercialBuilding(int x,
-                                  int y,
-                                  bool MapaMowiOWodzie,
-                                  bool MapaMowiOPradzie,
-                                  bool MapaMowiOPolicji,
-                                  bool MapaMowiOStrazy,
-                                  bool MapaMowiOSzpitalu,
-                                  bool MapaMowiOParku)
-            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie, MapaMowiOPolicji, MapaMowiOStrazy, MapaMowiOSzpitalu)
+        bool CzyMamPark { set; get; }
+
+        public CommercialBuilding(int x, int y)
+            : base(x, y)
         {
-
-            CzyMamPrad = MapaMowiOPradzie;
-            CzyMamWode = MapaMowiOWodzie;
-
-            CzyMamPolicje = MapaMowiOPolicji;
-            CzyMamStraz = MapaMowiOStrazy;
-            CzyMamSzpital = MapaMowiOSzpitalu;
-
-            CzyMamPark = MapaMowiOParku;
+            nazwa = "ZC";
         }
-        public override string ToString()
+
+        public  void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
         {
-            return "ZC";// + x.ToString() + " " + y.ToString();
+            base.GetToKnow(NewNeighbour);
+
+            if (NewNeighbour == typeof(Park))
+            {
+                CzyMamPark = true;
+                //return Elektrownie;
+            }
         }
+
+        public bool Czy_jestem_szczesliwy()
+        {
+            return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital && CzyMamPark );
+        }
+
+        public static int GetRadius()
+        {
+            return 0;
+        }
+
     }
+
     public class IndustrialBuilding : ZoneBuilding
     {
         public IndustrialBuilding(int x,
-                                  int y,
-                                  bool MapaMowiOWodzie,
-                                  bool MapaMowiOPradzie,
-                                  bool MapaMowiOPolicji,
-                                  bool MapaMowiOStrazy,
-                                  bool MapaMowiOSzpitalu)
-            : base(x, y, MapaMowiOWodzie, MapaMowiOPradzie, MapaMowiOPolicji, MapaMowiOStrazy, MapaMowiOSzpitalu)
+                                  int y)
+            : base(x, y)
         {
-            CzyMamPrad = MapaMowiOPradzie;
-            CzyMamWode = MapaMowiOWodzie;
+            nazwa = "ZI";
+        }
 
-            CzyMamPolicje = MapaMowiOPolicji;
-            CzyMamStraz = MapaMowiOStrazy;
-            CzyMamSzpital = MapaMowiOSzpitalu;
-        }
-        public override string ToString()
+        public bool Czy_jestem_szczesliwy()
         {
-            return "ZI";// + x.ToString() + " " + y.ToString();
+            return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital  );
         }
+
+        public static int GetRadius()
+        {
+            return 0;
+        }
+
     }
 }
