@@ -1,5 +1,6 @@
-#Projekt POCity
-######Makymilian Czudziak
+# Projekt POCity
+
+###### Makymilian Czudziak
 
 ### Instrukcja dla uzytkownika
 
@@ -43,7 +44,9 @@ Nieruchomości dzielą się następująco:
 Budynki mozna stawiac tylko na pustych polach oraz przy drogach, czyli w sąsiedztwie bezpośrednim z nieruchomością typu "Droga".
 
 Rola wszystkich Specjalnych budynków sprowadza się do zaspokajania potrzeb budynków strefowych. Kazdy budynek specjalny posiada promień, wewnątrz którego budynki strefowe mają spełnioną daną potrzebę.
-######np. Budynek Komercyjny potrzebuje prądu. Jeśli jest w odległości 7 od Wiezy Ciśnień to zaspokojoną potrzebę posiadania wody.
+
+###### np. Budynek Komercyjny potrzebuje prądu. Jeśli jest w odległości 7 od Wiezy Ciśnień to zaspokojoną potrzebę posiadania wody.
+
 Promienie obsługi kolejnych budynków specjalnych:
 
 - Podstawowe:
@@ -80,6 +83,7 @@ Potrzeby kazdego budynku Specjalnego:
 Jeśli budynek specjalny nie ma zaspokojonych potrzeb to jego promień obsługi wynosi 0 (jest nieoperatywny).
 Nie ma możliwosci burzenia budynków. Dlatego należy je stawiać w przemyślany sposób.
 
-####Obsługa gry
+#### Obsługa gry
+
 Gra posiada interfejs całkowicie tekstowy. Natomiast cały czas po uruchomieniu gry wyświetlana jest cała plansza, złożona z budynków, które się na niej znajdują.
 Użytkownik komunikuje się z grą komendami.
