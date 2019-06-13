@@ -1,14 +1,16 @@
 ﻿using System;
 namespace POCity.Properties
 {
-    public class Park : SpecialBuilding
+    public class Highway : Road
     {
-        public Park(int x, int y)
+        public Highway(int x, int y)
             : base(x, y)
         {
-            nazwa = "OP";
+            nazwa = "RH";
         }
         public static int GetRadius()
-        { return 4; }
+        {
+            return 0;
+        }
     }
 }

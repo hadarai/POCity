@@ -8,8 +8,8 @@ namespace POCity.Properties
         protected bool CzyMamSzpital { get; set; }
 
         public ZoneBuilding(int x, int y)
-            : base(x, y) 
-            { }
+            : base(x, y)
+        { }
 
 
         new public void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
@@ -34,25 +34,13 @@ namespace POCity.Properties
         }
 
         public virtual bool Czy_jestem_szczesliwy()
-        { 
-            return false; 
-            }
-        public static int GetRadius()
         {
-            return 0;
+            return false;
         }
-    }
-
-    public class SpecialBuilding : Building
-    {
-        public SpecialBuilding(int x, int y)
-            : base(x, y)
-            { }
 
         public static int GetRadius()
         {
             return 0;
         }
-
     }
 }

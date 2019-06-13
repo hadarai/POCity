@@ -1,5 +1,5 @@
 ﻿using System;
-namespace POCity.Properties.Property.Buildings.Specialbuildings.PublicService
+namespace POCity.Properties
 {
     public class FireDept : SpecialBuilding
     {

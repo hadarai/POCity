@@ -1,5 +1,5 @@
 ﻿using System;
-namespace POCity.Properties.Property.Buildings.Specialbuildings.BasicService
+namespace POCity.Properties
 {
     public class PowerPlant : SpecialBuilding
     {

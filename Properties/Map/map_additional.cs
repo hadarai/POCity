@@ -17,38 +17,38 @@ namespace POCity.Properties
                    (mapa[x, y - 1] is Road);
         }
 
-        public IEnumerable<Property> Get_list_building_of_type(Type building_type)
-        {
-            if (building_type == typeof(PowerPlant))
-            {
-                return Elektrownie;
-            }
-            if (building_type == typeof(Water))
-            {
-                return WiezeCisnien;
-            }
-            if (building_type == typeof(Healthcare))
-            {
-                return Szpitale;
-            }
-            if (building_type == typeof(Police))
-            {
-                return Policje;
-            }
-            if (building_type == typeof(Fire))
-            {
-                return StrazePozarne;
-            }
-            if (building_type == typeof(School))
-            {
-                return Szkoly;
-            }
-            if (building_type == typeof(Park))
-            {
-                return Parki;
-            }
-            return null;
-        }
+        //public IEnumerable<Property> Get_list_building_of_type(Type building_type)
+        //{
+        //    if (building_type == typeof(PowerPlant))
+        //    {
+        //        return Elektrownie;
+        //    }
+        //    if (building_type == typeof(WaterTower))
+        //    {
+        //        return WiezeCisnien;
+        //    }
+        //    if (building_type == typeof(Healthcare))
+        //    {
+        //        return Szpitale;
+        //    }
+        //    if (building_type == typeof(PoliceStation))
+        //    {
+        //        return Policje;
+        //    }
+        //    if (building_type == typeof(FireDept))
+        //    {
+        //        return StrazePozarne;
+        //    }
+        //    if (building_type == typeof(School))
+        //    {
+        //        return Szkoly;
+        //    }
+        //    if (building_type == typeof(Park))
+        //    {
+        //        return Parki;
+        //    }
+        //    return null;
+        //}
 
         private double NajkrotszaOdleglosc(IEnumerable<Property> ListaBudynkow, int x, int y)
         {

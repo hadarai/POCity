@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace POCity.Properties
 {
@@ -7,30 +8,18 @@ namespace POCity.Properties
     {
         protected int height { get; } = 20;
         protected int width { get; } = 20 ;
+
         Property[,] mapa;// = new Property[height, width];
 
-        
-        /*
-        private int PromienPradu;
-        private int PromienWody;
+        //private List<PowerPlant> Elektrownie = new List<PowerPlant>();
+        //public List<WaterTower> WiezeCisnien = new List<WaterTower>();
 
-        private int PromienPolicji;
-        private int PromienStrazy;
-        private int PromienSzpitala;
+        //public List<PoliceStation> Policje = new List<PoliceStation>();
+        //public List<FireDept> StrazePozarne = new List<FireDept>();
+        //public List<Healthcare> Szpitale = new List<Healthcare>();
 
-        private int PromienParku;
-        private int PromienSzkoly;
-        */
-
-        private List<PowerPlant> Elektrownie = new List<PowerPlant>();
-        public List<Water> WiezeCisnien = new List<Water>();
-
-        public List<Police> Policje = new List<Police>();
-        public List<Fire> StrazePozarne = new List<Fire>();
-        public List<Healthcare> Szpitale = new List<Healthcare>();
-
-        public List<Park> Parki = new List<Park>();
-        public List<School> Szkoly = new List<School>();
+        //public List<Park> Parki = new List<Park>();
+        //public List<School> Szkoly = new List<School>();
 
 
         public Map()
@@ -58,19 +47,12 @@ namespace POCity.Properties
             }
         }
 
-        public void ZawolajToUpdate(int x, int y)
-        {
-            if (mapa[x, y] != null)
-            {
-                /*mapa[x, y].Odswiez(NajkrotszaOdleglosc(WiezeCisnien, x, y) < PromienWody,
-                                   NajkrotszaOdleglosc(Elektrownie, x, y) < PromienPradu,
-                                   NajkrotszaOdleglosc(Policje, x, y) < PromienPolicji,
-                                   NajkrotszaOdleglosc(StrazePozarne, x, y) < PromienStrazy,
-                                   NajkrotszaOdleglosc(Szpitale, x, y) < PromienSzpitala,
-                                   NajkrotszaOdleglosc(Parki, x, y) < PromienParku,
-                                   NajkrotszaOdleglosc(Szkoly, x, y) < PromienSzkoly);*/
-            }
-        }
+        //public void ZawolajToUpdate(int x, int y)
+        //{
+        //    if (mapa[x, y] != null)
+        //    {
+        //    }
+        //}
 
         public void WypiszMape()
         {
@@ -86,6 +68,69 @@ namespace POCity.Properties
                 Console.Write("\n\n");
             }
             Console.Write("\n");
+        }
+
+        public void ForceRaiseHighway(int x, int y)
+        {
+            mapa[x, y] = new Highway(x, y);
+        }
+
+        private int dist(int x1, int y1, int x2, int y2)
+        { return 4; }
+        public void RaiseBuilding(int x, int y, string building_name)
+        {
+            if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
+            {
+                Type t = Type.GetType(building_name);
+                Console.Write("kupa:" + building_name);
+                object instance = Activator.CreateInstance(t, x, y);
+                Property p = (Property)instance;
+                mapa[x, y] = p;
+
+                IEnumerable<Property> sasiedztwo = GetNeighbouringProperties(x, y);
+
+                foreach (Property somsiad in sasiedztwo)
+                {
+                    if (somsiad != null)
+                    {
+                        //Console.WriteLine(p);
+                        //Console.Write(somsiad);
+                        Console.Write(somsiad.GetType());
+                        if ((int)somsiad.
+                            GetType().
+                            GetMethod("GetRadius", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly | BindingFlags.FlattenHierarchy
+                             ).
+                             Invoke(null, null) <= dist(p.x, p.y, somsiad.x, somsiad.y))
+                        {
+
+                            p.GetToKnow(somsiad.GetType());
+                        }
+                        Console.WriteLine("im done");
+                    }
+                }
+            }
+            else
+            {
+                throw new Exceptions.UnableToBuild();
+            }
+        }
+
+        public IEnumerable<Property> GetNeighbouringProperties(int x, int y, int radius = 10)
+        {
+            int half_radius = radius / 2;
+
+            List<Property> Neighbouring = new List<Property>();
+
+            for (int i = -half_radius; i < half_radius; i++)
+            {
+                if (i + x < 0 || i + x >= height) continue;
+                for (int j = -half_radius; j < half_radius; j++)
+                {
+                    if (j + y < 0 || j + y >= width) continue;
+                    Neighbouring.Add(mapa[i + x, j + y]);
+                }
+            }
+            return Neighbouring;
         }
 
     }
