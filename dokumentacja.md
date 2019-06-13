@@ -2,11 +2,11 @@
 
 ###### Makymilian Czudziak
 
-### Instrukcja dla uzytkownika
+### Instrukcja dla użytkownika
 
 #### Cel gry
 
-Celem gracza jest zbudowanie miasta wartego jak największą ilośc punktów za punktowane budynki.
+Celem gracza jest zbudowanie miasta wartego jak największą ilość punktów za punktowane budynki.
 Budynki punktowane to:
 
 - Mieszkalny - 5 pkt
@@ -17,7 +17,7 @@ Budynki punktowane to budynki strefowe, których potrzeby zostały spełnione, w
 
 #### Opis planszy i budynków
 
-Gra rozgrywa się na mapie 20 na 20 pól. Na kadym z pól mozna wybudowac nieruchomośc.
+Gra rozgrywa się na mapie 20 na 20 pól. Na kadym z pól mozna wybudowac nieruchomość.
 Nieruchomości dzielą się następująco:
 
 - Drogi:
@@ -45,7 +45,7 @@ Budynki mozna stawiac tylko na pustych polach oraz przy drogach, czyli w sąsied
 
 Rola wszystkich Specjalnych budynków sprowadza się do zaspokajania potrzeb budynków strefowych. Kazdy budynek specjalny posiada promień, wewnątrz którego budynki strefowe mają spełnioną daną potrzebę.
 
-###### np. Budynek Komercyjny potrzebuje prądu. Jeśli jest w odległości 7 od Wiezy Ciśnień to zaspokojoną potrzebę posiadania wody.
+np. Budynek Komercyjny potrzebuje prądu. Jeśli jest w odległości 7 od Wiezy Ciśnień to zaspokojoną potrzebę posiadania wody.
 
 Promienie obsługi kolejnych budynków specjalnych:
 
@@ -86,4 +86,7 @@ Nie ma możliwosci burzenia budynków. Dlatego należy je stawiać w przemyślan
 #### Obsługa gry
 
 Gra posiada interfejs całkowicie tekstowy. Natomiast cały czas po uruchomieniu gry wyświetlana jest cała plansza, złożona z budynków, które się na niej znajdują.
-Użytkownik komunikuje się z grą komendami.
+Użytkownik komunikuje się z grą komendami:
+
+- Start - uruchamia grę
+- Build -

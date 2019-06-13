@@ -9,7 +9,7 @@ namespace POCity.Properties
             : base(x, y)
         { }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 0;
         }

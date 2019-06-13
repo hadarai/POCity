@@ -33,12 +33,13 @@ namespace POCity.Properties
             }
         }
 
-        public virtual bool Czy_jestem_szczesliwy()
+        public override bool AmIHappy()
         {
-            return false;
+            return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz);
+            //return false;
         }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 0;
         }

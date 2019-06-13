@@ -25,8 +25,15 @@ namespace POCity.Properties
             return 0;
         }
 
-        public void GetToKnow(Type NewNeighbour)
-        { }
+        public abstract void GetToKnow(Type NewNeighbour);
+        
+
+        public abstract bool AmIHappy();
+        public abstract bool AmIWater();
+        public abstract bool AmIPower();
+        //{
+        //    return false;
+        //}
     }
 
 }

@@ -5,8 +5,8 @@ namespace POCity.Properties
 {
     public class Building : Property
     {
-        protected bool CzyMamWode { get; set; }
-        protected bool CzyMamPrad { get; set; }
+        public bool CzyMamWode { get; set; }
+        public bool CzyMamPrad { get; set; }
 
         public List<Type> wymagane_budynki = new List<Type>();
 
@@ -18,8 +18,9 @@ namespace POCity.Properties
             wymagane_budynki.Add(typeof(WaterTower));
         }
 
-        public void GetToKnow(Type NewNeighbour) //= Update
+        public override void GetToKnow(Type NewNeighbour) //= Update
         {
+            //Console.WriteLine("siema");
             if (NewNeighbour == typeof(PowerPlant))
             {
                 CzyMamPrad = true;
@@ -33,6 +34,19 @@ namespace POCity.Properties
 
         }
 
+        public override bool AmIHappy()
+        {
+            return CzyMamPrad && CzyMamWode;
+        }
 
+        public override bool AmIWater()
+        {
+            return CzyMamWode;
+        }
+
+        public override bool AmIPower()
+        {
+            return CzyMamPrad;
+        }
     }
 }

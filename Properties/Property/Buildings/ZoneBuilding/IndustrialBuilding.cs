@@ -10,12 +10,19 @@ namespace POCity.Properties
             nazwa = "ZI";
         }
 
-        public bool Czy_jestem_szczesliwy()
+        public override bool AmIHappy()
         {
+            //Console.WriteLine("elooo");
             return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital);
         }
 
-        public static int GetRadius()
+        //public override bool Czy_jestem_szczesliwy()
+        //{
+        //    Console.WriteLine("elooo");
+        //    return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital);
+        //}
+
+        public new static int GetRadius()
         {
             return 0;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 namespace POCity.Properties
 {
     public partial class Map
@@ -15,6 +16,25 @@ namespace POCity.Properties
                    (mapa[x, y + 1] is Road) ||
                    (mapa[x - 1, y] is Road) ||
                    (mapa[x, y - 1] is Road);
+        }
+
+        private double dist(int x1, int y1, int x2, int y2)
+        {
+            return Math.Sqrt((Math.Abs(x1 - x2)) ^ 2 + (Math.Abs(y1 - y2) ^ 2)); ; 
+            }
+
+        public bool Szczescie(int x, int y)
+        {
+            return mapa[x, y].AmIHappy();
+        }
+
+        public bool CzyMaszWode(int x, int y)
+        {
+            return mapa[x, y].AmIWater();
+        }
+        public bool CzyMaszPrad(int x, int y)
+        {
+            return mapa[x, y].AmIPower();
         }
 
         //public IEnumerable<Property> Get_list_building_of_type(Type building_type)
@@ -66,6 +86,10 @@ namespace POCity.Properties
             return Min;
         }
 
+        public void ForceRaiseHighway(int x, int y)
+        {
+            mapa[x, y] = new Highway(x, y);
+        }
 
         private double NajkrotszaOdleglosc<T>(List<T> ListaBudynkow, int x, int y)
         {

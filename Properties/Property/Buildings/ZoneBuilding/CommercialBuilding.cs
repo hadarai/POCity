@@ -11,7 +11,7 @@ namespace POCity.Properties
             nazwa = "ZC";
         }
 
-        public void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
+        public new void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
         {
             base.GetToKnow(NewNeighbour);
 
@@ -21,12 +21,12 @@ namespace POCity.Properties
             }
         }
 
-        public bool Czy_jestem_szczesliwy()
+        public override bool AmIHappy()
         {
             return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz && CzyMamSzpital && CzyMamPark);
         }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 0;
         }

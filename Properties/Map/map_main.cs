@@ -54,38 +54,20 @@ namespace POCity.Properties
         //    }
         //}
 
-        public void WypiszMape()
-        {
-            for(int i=0;i<20;i++)
-            {
-                for(int j=0;j<20;j++)
-                {
+        
 
-                    Console.Write(ZawolajToString(i, j));
-                    Console.Write(" ");
-                }
-                
-                Console.Write("\n\n");
-            }
-            Console.Write("\n");
-        }
 
-        public void ForceRaiseHighway(int x, int y)
-        {
-            mapa[x, y] = new Highway(x, y);
-        }
-
-        private int dist(int x1, int y1, int x2, int y2)
-        { return 4; }
         public void RaiseBuilding(int x, int y, string building_name)
         {
             if (CzyMogeTuCokolwiek(x, y) && CzyObokJestDroga(x, y))
             {
                 Type t = Type.GetType(building_name);
-                Console.Write("kupa:" + building_name);
+                //Console.WriteLine("Zbuduje: " + building_name);
                 object instance = Activator.CreateInstance(t, x, y);
                 Property p = (Property)instance;
                 mapa[x, y] = p;
+
+                Console.WriteLine("Buduje: " + p);
 
                 IEnumerable<Property> sasiedztwo = GetNeighbouringProperties(x, y);
 
@@ -95,17 +77,24 @@ namespace POCity.Properties
                     {
                         //Console.WriteLine(p);
                         //Console.Write(somsiad);
-                        Console.Write(somsiad.GetType());
-                        if ((int)somsiad.
-                            GetType().
-                            GetMethod("GetRadius", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly | BindingFlags.FlattenHierarchy
-                             ).
-                             Invoke(null, null) <= dist(p.x, p.y, somsiad.x, somsiad.y))
-                        {
+                        //Console.Write(somsiad.GetType());
 
+                        //Console.WriteLine("Sasiaduje z: " + somsiad);
+                        //Console.WriteLine("ble: " + (int)somsiad.GetType().GetMethod("GetRadius", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly | BindingFlags.FlattenHierarchy).Invoke(null, null));
+
+                        if ((int)somsiad.GetType().GetMethod("GetRadius", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly | BindingFlags.FlattenHierarchy).Invoke(null, null) >= dist(p.x, p.y, somsiad.x, somsiad.y))
+                        {
+                            Console.WriteLine("Blisko ja: " + p + " mam do: " + somsiad);
                             p.GetToKnow(somsiad.GetType());
+
+
                         }
-                        Console.WriteLine("im done");
+                        if((int)p.GetType().GetMethod("GetRadius", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly | BindingFlags.FlattenHierarchy).Invoke(null, null) >= dist(p.x, p.y, somsiad.x, somsiad.y))
+                        {
+                            Console.WriteLine("Blisko on: " + somsiad + " ma do mnie: " + p);
+                            somsiad.GetToKnow(p.GetType());
+                        }
+                        //Console.WriteLine("im done");
                     }
                 }
             }

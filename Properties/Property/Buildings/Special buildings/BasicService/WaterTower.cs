@@ -9,7 +9,7 @@ namespace POCity.Properties
             nazwa = "BW";
         }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         { return 7; }
 
     }

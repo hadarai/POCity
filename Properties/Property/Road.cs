@@ -11,9 +11,24 @@ namespace POCity.Properties
         {
             return 0;
         }
-        public void GetToKnow(Type NewNeighbour)
+        public override void GetToKnow(Type NewNeighbour)
         {
 
+        }
+
+        public override bool AmIHappy()
+        {
+            return true;
+        }
+
+        public override bool AmIWater()
+        {
+            return true;
+        }
+
+        public override bool AmIPower()
+        {
+            return true;
         }
     }
 }
