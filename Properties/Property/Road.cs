@@ -1,6 +1,7 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class Road : Property
     {
         public Road(int x, int y)
@@ -11,24 +12,27 @@ namespace POCity.Properties
         {
             return 0;
         }
-        public override void GetToKnow(Type NewNeighbour)
-        {
+        public override void GetToKnow(Type new_neighbour)
+        { }
 
+        public override string IsWorking()
+        {
+            return "\u2714";
         }
 
-        public override bool AmIHappy()
+        public override string GotWater()
         {
-            return true;
+            return "\u2714";
         }
 
-        public override bool AmIWater()
+        public override string GotPower()
         {
-            return true;
+            return "\u2714";
         }
 
-        public override bool AmIPower()
+        public override int WorthPoints()
         {
-            return true;
+            return 0;
         }
     }
 }

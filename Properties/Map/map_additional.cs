@@ -3,80 +3,47 @@ using System.Collections.Generic;
 
 namespace POCity.Properties
 {
+    [Serializable]
     public partial class Map
     {
-        private bool CzyMogeTuCokolwiek(int x, int y)
+        private bool CanIBuildHere(int x, int y)
         {
-            return mapa[x, y] == null && x < 20 && x > 0 && y < 20 && y > 0;
+            return map[x, y] == null;
         }
 
-        private bool CzyObokJestDroga(int x, int y)
+        private bool AmINextToRoad(int x, int y)
         {
-            return (mapa[x + 1, y] is Road) ||
-                   (mapa[x, y + 1] is Road) ||
-                   (mapa[x - 1, y] is Road) ||
-                   (mapa[x, y - 1] is Road);
+            bool t1=false, t2=false, t3=false, t4=false;
+            if(x < 19)
+            {
+                t1 = (map[x + 1, y] is Road);
+            }
+            if(y < 19)
+            {
+                t2 = (map[x, y + 1] is Road);
+            }
+            if(x > 0)
+            {
+                t3 = (map[x - 1, y] is Road);
+            }
+            if(y > 0)
+            {
+                t4 = (map[x, y - 1] is Road);
+            }
+            return t1 || t2 || t3 || t4;
         }
 
         private double dist(int x1, int y1, int x2, int y2)
         {
             return Math.Sqrt((Math.Abs(x1 - x2)) ^ 2 + (Math.Abs(y1 - y2) ^ 2)); ; 
             }
-
-        public bool Szczescie(int x, int y)
-        {
-            return mapa[x, y].AmIHappy();
-        }
-
-        public bool CzyMaszWode(int x, int y)
-        {
-            return mapa[x, y].AmIWater();
-        }
-        public bool CzyMaszPrad(int x, int y)
-        {
-            return mapa[x, y].AmIPower();
-        }
-
-        //public IEnumerable<Property> Get_list_building_of_type(Type building_type)
-        //{
-        //    if (building_type == typeof(PowerPlant))
-        //    {
-        //        return Elektrownie;
-        //    }
-        //    if (building_type == typeof(WaterTower))
-        //    {
-        //        return WiezeCisnien;
-        //    }
-        //    if (building_type == typeof(Healthcare))
-        //    {
-        //        return Szpitale;
-        //    }
-        //    if (building_type == typeof(PoliceStation))
-        //    {
-        //        return Policje;
-        //    }
-        //    if (building_type == typeof(FireDept))
-        //    {
-        //        return StrazePozarne;
-        //    }
-        //    if (building_type == typeof(School))
-        //    {
-        //        return Szkoly;
-        //    }
-        //    if (building_type == typeof(Park))
-        //    {
-        //        return Parki;
-        //    }
-        //    return null;
-        //}
-
-        private double NajkrotszaOdleglosc(IEnumerable<Property> ListaBudynkow, int x, int y)
+        
+        private double ShortestDistance(IEnumerable<Property> list_of_buildings, int x, int y)
         {
             double Min = 500;
-            //System.Collections.IList list = ListaBudynkow;
-            foreach(Property i in ListaBudynkow)
+
+            foreach(Property i in list_of_buildings)
             {
-                //Property i = (Property)item;
                 double dist = Math.Sqrt((Math.Abs(i.x - x)) ^ 2 + (Math.Abs(y - i.y) ^ 2));
                 if (dist < Min)
                 {
@@ -88,14 +55,14 @@ namespace POCity.Properties
 
         public void ForceRaiseHighway(int x, int y)
         {
-            mapa[x, y] = new Highway(x, y);
+            map[x, y] = new Highway(x, y);
         }
 
-        private double NajkrotszaOdleglosc<T>(List<T> ListaBudynkow, int x, int y)
+        private double ShortestDistance<T>(List<T> list_of_buildings, int x, int y)
         {
             double Min = 500;
 
-            System.Collections.IList list = ListaBudynkow;
+            System.Collections.IList list = list_of_buildings;
             for (int i1 = 0; i1 < list.Count; i1++)
             {
                 Property i = (Property)list[i1];
@@ -107,7 +74,5 @@ namespace POCity.Properties
             }
             return Min;
         }
-
-
     }
 }

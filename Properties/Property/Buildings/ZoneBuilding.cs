@@ -1,47 +1,66 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class ZoneBuilding : Building
     {
-        protected bool CzyMamPolicje { get; set; }
-        protected bool CzyMamStraz { get; set; }
-        protected bool CzyMamSzpital { get; set; }
+        protected bool do_i_have_police { get; set; }
+        protected bool do_i_have_fire { get; set; }
+        protected bool do_i_have_hospital { get; set; }
 
         public ZoneBuilding(int x, int y)
             : base(x, y)
         { }
 
-
-        new public void GetToKnow(Type NewNeighbour) // Mam nowego sadsiada i on mi cos daje
+        public override void GetToKnow(Type NewNeighbour)
         {
             base.GetToKnow(NewNeighbour);
 
-            if (NewNeighbour == typeof(Healthcare))
+            if (NewNeighbour == typeof(Hospital))
             {
-                CzyMamSzpital = true;
-                //return Szpitale;
+                do_i_have_hospital = true;
             }
             if (NewNeighbour == typeof(PoliceStation))
             {
-                CzyMamPolicje = true;
-                //return Policje;
+                do_i_have_police = true;
             }
             if (NewNeighbour == typeof(FireDept))
             {
-                CzyMamStraz = true;
-                //return StrazePozarn1e;
+                do_i_have_fire = true;
             }
         }
 
-        public override bool AmIHappy()
+        public string GotPolice()
         {
-            return (CzyMamPrad && CzyMamWode && CzyMamPolicje && CzyMamStraz);
-            //return false;
+            if (do_i_have_police)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
+        }
+
+        public string GotFire()
+        {
+            if (do_i_have_fire)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
+        }
+
+        public string GotHospital()
+        {
+            if (do_i_have_hospital)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
         }
 
         public new static int GetRadius()
         {
             return 0;
         }
+
     }
 }

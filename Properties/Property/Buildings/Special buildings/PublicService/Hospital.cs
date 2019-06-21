@@ -2,16 +2,16 @@
 namespace POCity.Properties
 {
     [Serializable]
-    public class Avenue : Road
+    public class Hospital : SpecialBuilding
     {
-        public Avenue(int x, int y)
+        public Hospital(int x, int y)
             : base(x, y)
         {
-            my_name = "\u21CB\u21CB";
+            my_name = "\u2624 ";
         }
         public new static int GetRadius()
         {
-            return 0;
+            return 10;
         }
     }
 }

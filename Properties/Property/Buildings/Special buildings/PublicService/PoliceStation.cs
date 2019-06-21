@@ -1,15 +1,16 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class PoliceStation : SpecialBuilding
     {
         public PoliceStation(int x, int y)
             : base(x, y)
         {
-            nazwa = "PP";
+            my_name = "\u2696 ";
         }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 10;
         }

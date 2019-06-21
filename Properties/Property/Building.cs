@@ -3,50 +3,65 @@ using System.Collections.Generic;
 
 namespace POCity.Properties
 {
+    [Serializable]
     public class Building : Property
     {
-        public bool CzyMamWode { get; set; }
-        public bool CzyMamPrad { get; set; }
+        public bool do_i_have_water { get; set; }
+        public bool do_i_have_power { get; set; }
 
-        public List<Type> wymagane_budynki = new List<Type>();
+        public List<Type> required_buildings = new List<Type>();
 
         protected Building(int x, int y)
             : base(x, y)
         {
 
-            wymagane_budynki.Add(typeof(PowerPlant));
-            wymagane_budynki.Add(typeof(WaterTower));
+            required_buildings.Add(typeof(PowerPlant));
+            required_buildings.Add(typeof(WaterTower));
         }
 
-        public override void GetToKnow(Type NewNeighbour) //= Update
+        public override void GetToKnow(Type new_neighbour)
         {
-            //Console.WriteLine("siema");
-            if (NewNeighbour == typeof(PowerPlant))
+            if (new_neighbour == typeof(PowerPlant))
             {
-                CzyMamPrad = true;
-                //return Elektrownie;
+                do_i_have_power = true;
             }
-            else if (NewNeighbour == typeof(WaterTower))
+            else if (new_neighbour == typeof(WaterTower))
             {
-                CzyMamWode = true;
-                //return WiezeCisnien;
+                do_i_have_water = true;
             }
 
         }
 
-        public override bool AmIHappy()
+        public override string IsWorking()
         {
-            return CzyMamPrad && CzyMamWode;
+            if (do_i_have_power && do_i_have_water)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
         }
 
-        public override bool AmIWater()
+        public override string GotWater()
         {
-            return CzyMamWode;
+            if (do_i_have_water)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
         }
 
-        public override bool AmIPower()
+        public override string GotPower()
         {
-            return CzyMamPrad;
+            if (do_i_have_power)
+            {
+                return "\u2714";
+            }
+            return "\u2718";
+        }
+
+        public override int WorthPoints()
+        {
+            return 0;
         }
     }
 }

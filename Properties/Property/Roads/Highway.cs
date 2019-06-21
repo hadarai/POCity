@@ -1,14 +1,15 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class Highway : Road
     {
         public Highway(int x, int y)
             : base(x, y)
         {
-            nazwa = "RH";
+            my_name = "\u21C4\u21C4";
         }
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 0;
         }

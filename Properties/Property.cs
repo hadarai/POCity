@@ -2,22 +2,22 @@
 
 namespace POCity.Properties
 {
+    [Serializable]
     public abstract class Property
     {
         public int x;
         public int y;
-        protected string nazwa;
-        protected int PromienPradu = 7;
+        protected string my_name;
 
-        protected Property(int nx, int ny)
+        protected Property(int new_x, int new_y)
         {
-            x = nx;
-            y = ny;
+            x = new_x;
+            y = new_y;
         }
 
         public override string ToString()
         {
-            return this.nazwa; //+ " " + x.ToString() + " " + y.ToString();
+            return this.my_name;
         }
 
         public static int GetRadius()
@@ -25,15 +25,13 @@ namespace POCity.Properties
             return 0;
         }
 
-        public abstract void GetToKnow(Type NewNeighbour);
-        
+        public abstract void GetToKnow(Type new_neighbour);
 
-        public abstract bool AmIHappy();
-        public abstract bool AmIWater();
-        public abstract bool AmIPower();
-        //{
-        //    return false;
-        //}
+        public abstract string IsWorking();
+        public abstract string GotWater();
+        public abstract string GotPower();
+
+        public abstract int WorthPoints();
     }
 
 }

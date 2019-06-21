@@ -1,17 +1,19 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class PowerPlant : SpecialBuilding
     {
         public PowerPlant(int x, int y)
             : base(x, y)
         {
-            nazwa = "BP";
+            my_name = "\u26A1";
         }
 
-
-        public static int GetRadius()
-        { return 8; }
+        public new static int GetRadius()
+        {
+            return 8;
+        }
 
     }
 }

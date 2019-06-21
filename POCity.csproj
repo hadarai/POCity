@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,7 +7,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>POCity</RootNamespace>
     <AssemblyName>POCity</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +30,17 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConsoleEx, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ConsoleEx.1.0.4\lib\ConsoleEx.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -43,13 +54,13 @@
     <Compile Include="Properties\Property\Buildings\Special buildings\BasicService\WaterTower.cs" />
     <Compile Include="Properties\Property\Buildings\Special buildings\OtherService\School.cs" />
     <Compile Include="Properties\Property\Buildings\Special buildings\OtherService\Park.cs" />
-    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\Healthcare.cs" />
+    <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\Hospital.cs" />
     <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\PoliceStation.cs" />
     <Compile Include="Properties\Property\Buildings\Special buildings\PublicService\FireDept.cs" />
     <Compile Include="Properties\Property\Buildings\ZoneBuilding.cs" />
-    <Compile Include="Properties\Property\Buildings\ZoneBuilding\ResidentialBuilding.cs" />
-    <Compile Include="Properties\Property\Buildings\ZoneBuilding\CommercialBuilding.cs" />
-    <Compile Include="Properties\Property\Buildings\ZoneBuilding\IndustrialBuilding.cs" />
+    <Compile Include="Properties\Property\Buildings\ZoneBuilding\Residential.cs" />
+    <Compile Include="Properties\Property\Buildings\ZoneBuilding\Commercial.cs" />
+    <Compile Include="Properties\Property\Buildings\ZoneBuilding\Industrial.cs" />
     <Compile Include="Properties\Property\Buildings\SpecialBuilding.cs" />
     <Compile Include="Properties\Property\Roads\PlainRoad.cs" />
     <Compile Include="Properties\Property\Roads\Avenue.cs" />
@@ -57,16 +68,11 @@
     <Compile Include="Properties\Property\Building.cs" />
     <Compile Include="Properties\Property\Road.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Properties\Property\" />
-    <Folder Include="Properties\Property\Buildings\" />
-    <Folder Include="Properties\Map\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Properties\Property\Buildings\Special buildings\BasicService\" />
-    <Folder Include="Properties\Property\Buildings\Special buildings\OtherService\" />
-    <Folder Include="Properties\Property\Buildings\Special buildings\PublicService\" />
-    <Folder Include="Properties\Property\Buildings\ZoneBuilding\" />
-    <Folder Include="Properties\Property\Roads\" />
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

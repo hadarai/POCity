@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="POCity.MainClass">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Map">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAAAAAAAAQAQACEQAgEAAAEAAAAgAgAAAAAACA=</HashCode>
+      <FileName>Properties\Map\Map_additional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.TextInterface">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAEAAAAQhgAAAAAAAAAAAAAAgAAAAAAAAACBAAM=</HashCode>
+      <FileName>Properties\TextInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Property">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAEACAAAAAAAAAAACAAAARgAAgQABA=</HashCode>
+      <FileName>Properties\Property.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Building">
+    <Position X="10.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAGACAAAAAAAAACAAAAQAAAAAgBA=</HashCode>
+      <FileName>Properties\Property\Building.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Road">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAACAAAAAAAAAAACAAAAQAAAgAABA=</HashCode>
+      <FileName>Properties\Property\Road.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.ZoneBuilding">
+    <Position X="15.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAACAAAAQAQAAABAAAAAAACAAAAAAAAAIgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\ZoneBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.SpecialBuilding">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAABA=</HashCode>
+      <FileName>Properties\Property\Buildings\SpecialBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Residential">
+    <Position X="17.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAQAQAAAAAAAAAAAAACAAAAAAAAggARA=</HashCode>
+      <FileName>Properties\Property\Buildings\ZoneBuilding\Residential.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Industrial">
+    <Position X="13.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAABA=</HashCode>
+      <FileName>Properties\Property\Buildings\ZoneBuilding\Industrial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Commercial">
+    <Position X="15.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAQAAAAAAAAAAAAACAAAAAAAAgAARA=</HashCode>
+      <FileName>Properties\Property\Buildings\ZoneBuilding\Commercial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.PowerPlant">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\BasicService\PowerPlant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.WaterTower">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\BasicService\WaterTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Park">
+    <Position X="11.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\OtherService\Park.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.School">
+    <Position X="10" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\OtherService\School.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.FireDept">
+    <Position X="4.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\PublicService\FireDept.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Hospital">
+    <Position X="6.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\PublicService\Hospital.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.PoliceStation">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Buildings\Special buildings\PublicService\PoliceStation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Avenue">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Roads\Avenue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.Highway">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Roads\Highway.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POCity.Properties.PlainRoad">
+    <Position X="16.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Properties\Property\Roads\PlainRoad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

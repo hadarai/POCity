@@ -1,16 +1,19 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class WaterTower : SpecialBuilding
     {
         public WaterTower(int x, int y)
             : base(x, y)
         {
-            nazwa = "BW";
+            my_name = "\u26B2 ";
         }
 
         public new static int GetRadius()
-        { return 7; }
+        {
+            return 7;
+        }
 
     }
 }

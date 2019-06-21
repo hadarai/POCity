@@ -1,15 +1,16 @@
 ﻿using System;
 namespace POCity.Properties
 {
+    [Serializable]
     public class FireDept : SpecialBuilding
     {
         public FireDept(int x, int y)
             : base(x, y)
         {
-            nazwa = "PF";
+            my_name = "\u26D1";
         }
 
-        public static int GetRadius()
+        public new static int GetRadius()
         {
             return 10;
         }
